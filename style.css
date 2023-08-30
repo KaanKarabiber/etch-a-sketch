@@ -1,0 +1,8 @@
+body{
+    display: flex;
+}
+div{
+    border: 1px solid black;
+    width: 6.25%;
+    height: 6.25%;
+}
