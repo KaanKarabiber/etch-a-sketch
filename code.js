@@ -1,11 +1,17 @@
-function createDivELement(){
+function createGrid(){
+    const container = document.createElement('div');
+    container.classList.add('container');
+    document.body.append(container);
     for(let i = 0; i < 16; i++){
+        const newRow = document.createElement('div');
+        newRow.classList.add('row');
         for(let j = 0; j < 16; j++){
             const newDiv = document.createElement('div');
             newDiv.classList.add('cells');
-            let row = document.querySelector(`.row${j + 1}`);
-            row.appendChild(newDiv);
+            newRow.appendChild(newDiv);
         }
+        //const container = document.getElementById('container');
+        container.appendChild(newRow);
     }
 }
 let changeDimensionsButton = document.querySelector('button');
@@ -14,6 +20,6 @@ changeDimensionsButton.addEventListener('click',() => {
     console.log(answer);
     
 })
-createDivELement();
+createGrid();
 
 

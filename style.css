@@ -8,8 +8,11 @@ body{
 h1{
     text-align: center;
 }
+.button-container{
+    display: flex;
+    justify-content: center;
+}
 button{
-    align-self: center;
     margin-bottom: 10px;
     padding: 10px;
     background-color: gold;
@@ -20,9 +23,12 @@ button{
 button:hover{
     background-color: yellow;
 }
-body > div{
+.container{
+    min-height: 75vh;
+}
+.row{
     display: flex;
-    height: 6.25%;
+    min-height: 6.25%;
 }
 .cells{
     border: 1px solid black;
