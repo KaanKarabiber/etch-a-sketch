@@ -10,16 +10,20 @@ function createGrid(){
             newDiv.classList.add('cells');
             newRow.appendChild(newDiv);
         }
-        //const container = document.getElementById('container');
         container.appendChild(newRow);
     }
+}
+function removeGrid(){
+    const container = document.querySelector('.container');
+    container.remove();
 }
 let changeDimensionsButton = document.querySelector('button');
 changeDimensionsButton.addEventListener('click',() => {
     let answer = prompt('type dimension');
     console.log(answer);
-    
 })
+
 createGrid();
+
 
 
