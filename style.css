@@ -1,8 +1,13 @@
 body{
-    display: flex;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
 }
-div{
+body > div{
+    display: flex;
+    height: 6.25%;
+}
+.cells{
     border: 1px solid black;
     width: 6.25%;
-    height: 6.25%;
 }
