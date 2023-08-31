@@ -28,11 +28,11 @@ button:hover{
 }
 .row{
     display: flex;
-    min-height: 6.25%;
+    
 }
 .cells{
     border: 1px solid black;
-    width: 6.25%;
+    
 }
 .cells:hover{
     background-color: black;
