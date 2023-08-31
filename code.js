@@ -1,4 +1,4 @@
-function CreateGrid(dimension){
+function createGrid(dimension){
     widthHeightValue = (100 / dimension) + '%';
     const container = document.createElement('div');
     container.classList.add('container');
@@ -23,13 +23,14 @@ function removeGrid(){
 let changeDimensionsButton = document.querySelector('button');
 changeDimensionsButton.addEventListener('click',() => {
     let answer = prompt('type dimension');
-    console.log(answer);
+    while(answer >= 100){
+        answer = prompt('please enter a number less then 101');
+    }
     removeGrid();
-    CreateGrid(answer);
+    createGrid(answer);
 })
 
-
-CreateGrid(16);
+createGrid(16);
 
 
 
