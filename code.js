@@ -15,16 +15,34 @@ function createGrid(dimension){
         }
         container.appendChild(newRow);
     }
+    cellClick();
 }
 function removeGrid(){
     const container = document.querySelector('.container');
     container.remove();
 }
+function cellClick(){
+    let isMousePressed = false;
+    cells = document.querySelectorAll('.cells');
+    cells.forEach(cell => {
+        cell.addEventListener('mousedown', () =>{
+            isMousePressed = true;
+        });
+        cell.addEventListener('mouseup', () =>{
+            isMousePressed = false;
+        });
+        cell.addEventListener('mousemove', (event) =>{
+            if(isMousePressed){
+                event.target.style.backgroundColor = 'black';
+            }
+        });
+    });
+}
 let changeDimensionsButton = document.querySelector('button');
 changeDimensionsButton.addEventListener('click',() => {
-    let answer = prompt('type dimension');
+    let answer = prompt('Type dimension');
     while(answer >= 100){
-        answer = prompt('please enter a number less then 101');
+        answer = prompt('Please enter a number less then 101');
     }
     removeGrid();
     createGrid(answer);
