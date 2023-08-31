@@ -28,7 +28,7 @@ function cellClick(){
         cell.addEventListener('mousedown', () =>{
             isMousePressed = true;
         });
-        cell.addEventListener('mouseup', () =>{
+        document.body.addEventListener('mouseup', () =>{
             isMousePressed = false;
         });
         cell.addEventListener('mousemove', (event) =>{
@@ -38,7 +38,7 @@ function cellClick(){
         });
     });
 }
-let changeDimensionsButton = document.querySelector('button');
+const changeDimensionsButton = document.querySelector('#change-dimension');
 changeDimensionsButton.addEventListener('click',() => {
     let answer = prompt('Type dimension');
     while(answer >= 100){
@@ -47,6 +47,34 @@ changeDimensionsButton.addEventListener('click',() => {
     removeGrid();
     createGrid(answer);
 })
+const resetButton = document.querySelector('#reset');
+resetButton.addEventListener('click', () =>{
+    cells = document.querySelectorAll('.cells');
+    cells.forEach(cell =>{
+        cell.style.backgroundColor = '';
+    });
+});
+const removeBordersButton = document.querySelector('#remove-borders');
+removeBordersButton.addEventListener('click', () =>{
+    cells = document.querySelectorAll('.cells');
+    let removeAdd = false;
+    cells.forEach(cell =>{
+        if(removeBordersButton.textContent === "Remove borders"){
+            cell.style.border = '0px';
+            removeAdd = true;
+        }
+        else{
+            cell.style.border = '1px solid black';
+            removeAdd = false;
+        }
+    });
+    if(removeAdd){
+        removeBordersButton.textContent = 'Add borders';
+    }
+    else{
+        removeBordersButton.textContent = 'Remove borders';
+    }
+});
 
 createGrid(16);
 
